@@ -16,7 +16,7 @@
   header h1 { font-size:18px; }
   header .sub { font-size:12px; opacity:.85; margin-top:3px; }
   .tabs { display:flex; background:#fff; border-bottom:1px solid #e0e4ea; }
-  .tab { flex:1; text-align:center; padding:12px 0; font-size:14px; font-weight:600; color:#888; border-bottom:3px solid transparent; cursor:pointer; }
+  .tab { flex:1; text-align:center; padding:12px 0; font-size:13px; font-weight:600; color:#888; border-bottom:3px solid transparent; cursor:pointer; }
   .tab.on { color:#1b4fa0; border-color:#1b4fa0; }
   main { padding:12px; max-width:640px; margin:0 auto; }
   .card { background:#fff; border-radius:12px; padding:14px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
@@ -45,7 +45,8 @@
 </header>
 <div class="tabs">
   <div class="tab on" data-t="all">전체</div>
-  <div class="tab" data-t="urgent">🔴 핵심</div>
+  <div class="tab" data-t="perform">🎭 공연·예방</div>
+  <div class="tab" data-t="trip">🚌 체험·여행</div>
   <div class="tab" data-t="cal">영업 캘린더</div>
 </div>
 </div>
@@ -76,11 +77,12 @@ function render(tab){
   }
   cal.style.display='none'; list.style.display='block';
   let items = DATA.items || [];
-  if(tab==='urgent') items = items.filter(i=>i.tier==='urgent');
+  if(tab==='perform') items = items.filter(i=>i.tier==='perform');
+  if(tab==='trip') items = items.filter(i=>i.tier==='trip');
   if(!items.length){ list.innerHTML='<div class="empty">아직 수집된 공고가 없습니다.<br>매일 오전 9시에 자동으로 채워집니다.</div>'; return; }
   list.innerHTML = items.map(i=>`
     <div class="card">
-      <span class="badge ${i.tier==='urgent'?'b-urgent':'b-normal'}">${i.tier==='urgent'?'🔴 핵심':'🟡 일반'}</span>
+      <span class="badge ${i.tier==='perform'?'b-urgent':'b-normal'}">${i.tier==='perform'?'🎭 공연·예방':'🚌 체험·여행'}</span>
       <span class="badge b-type">${esc(i.type)}</span>
       <span class="badge b-type">키워드: ${esc(i.keyword)}</span>
       <div class="title">${esc(i.title)}</div>

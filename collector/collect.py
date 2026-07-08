@@ -24,23 +24,22 @@ OPERATIONS = [
 ]
 
 # ── 키워드 설정 ─────────────────────────────────────────────
-# 🔴 즉시(핵심): 공고명에 있으면 무조건 수집 + 긴급 표시
-KEYWORDS_URGENT = [
-    "현장체험학습", "수학여행", "수련활동", "체험학습",
+# 🎭 공연·예방: 우리가 직접 입찰/영업 가능한 공고
+KEYWORDS_PERFORM = [
     "학교폭력 예방", "학교폭력예방", "흡연 예방", "흡연예방",
     "음주 예방", "도박 예방", "마약 예방", "약물 예방",
     "딥페이크", "디지털 성범죄", "사이버폭력",
     "인성교육", "생명존중", "자살예방", "성교육", "양성평등",
     "공연 관람", "관람 공연", "뮤지컬", "연극",
-]
-
-# 🟡 일반: 공고명에 있으면 수집 (일반 표시)
-KEYWORDS_NORMAL = [
     "문화예술교육", "문화예술", "예술교육", "예술체험", "문화체험",
-    "교육활동", "체험활동", "학교예술", "문화행사",
-    "예방교육", "안전교육", "진로교육",
+    "학교예술", "문화행사", "예방교육", "안전교육", "진로교육",
 ]
 
+# 🚌 체험·여행: 직접 사업은 아니지만 학교 예산 동향 파악용
+KEYWORDS_TRIP = [
+    "현장체험학습", "수학여행", "수련활동", "체험학습",
+    "교육활동", "체험활동",
+]
 # 발주기관(수요기관) 이름에 이 단어가 있으면 교육기관으로 판단
 EDU_ORG_WORDS = ["학교", "교육청", "교육지원청", "교육원", "교육연수원", "유치원", "교육심의"]
 
@@ -117,7 +116,7 @@ def main():
 
     collected = {}
     for label, op in OPERATIONS:
-        for tier, keywords in (("urgent", KEYWORDS_URGENT), ("normal", KEYWORDS_NORMAL)):
+        for tier, keywords in (("perform", KEYWORDS_PERFORM), ("trip", KEYWORDS_TRIP)):
             for kw in keywords:
                 for it in fetch_by_keyword(op, kw, bgn, end):
                     name = it.get("bidNtceNm", "")
@@ -125,8 +124,8 @@ def main():
                     if not name or is_excluded(name):
                         continue
                     edu = is_edu_org(item=it)
-                    # 교육기관 공고이거나, 긴급 키워드면 기관 무관 수집
-                    if not edu and tier != "urgent":
+                    # 체험·여행은 교육기관 발주만, 공연·예방은 지자체·재단 발주도 수집
+                    if not edu and tier == "trip":
                         continue
                     prev = collected.get(no)
                     entry = {
@@ -139,11 +138,11 @@ def main():
                         "deadline": it.get("bidClseDt", ""),
                         "url": it.get("bidNtceDtlUrl") or it.get("bidNtceUrl", ""),
                         "type": label,
-                        "tier": "urgent" if tier == "urgent" else "normal",
+                        "tier": tier,
                         "keyword": kw,
                         "edu_org": edu,
                     }
-                    if prev is None or (prev["tier"] != "urgent" and entry["tier"] == "urgent"):
+                    if prev is None or (prev["tier"] != "perform" and entry["tier"] == "perform"):
                         collected[no] = entry
 
     # 기존 데이터와 병합 (최근 30일 유지)

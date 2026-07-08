@@ -12,7 +12,7 @@
    "deadline": "2026-07-20 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01622495&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "체험학습",
    "edu_org": true
   },
@@ -26,7 +26,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01621180&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -40,7 +40,7 @@
    "deadline": "2026-07-14 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01623060&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -54,7 +54,7 @@
    "deadline": "2026-07-22 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01622564&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -68,7 +68,7 @@
    "deadline": "2026-07-15 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618248&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -82,7 +82,7 @@
    "deadline": "2026-07-20 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01616756&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -96,7 +96,7 @@
    "deadline": "2026-07-20 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01621762&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -110,7 +110,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01621747&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -124,7 +124,7 @@
    "deadline": "2026-07-30 16:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01621166&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -138,7 +138,7 @@
    "deadline": "2026-07-08 14:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620355&bidPbancOrd=000",
    "type": "물품",
-   "tier": "normal",
+   "tier": "perform",
    "keyword": "안전교육",
    "edu_org": true
   },
@@ -152,7 +152,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620823&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -166,7 +166,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617833&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -180,7 +180,7 @@
    "deadline": "2026-07-20 16:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620070&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -194,7 +194,7 @@
    "deadline": "2026-07-28 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620297&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -208,7 +208,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620512&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -222,7 +222,7 @@
    "deadline": "2026-07-14 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01613510&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -236,7 +236,7 @@
    "deadline": "2026-07-28 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01606242&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -250,7 +250,7 @@
    "deadline": "2026-07-20 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01620160&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -264,7 +264,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619971&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -278,7 +278,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618505&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수련활동",
    "edu_org": true
   },
@@ -292,7 +292,7 @@
    "deadline": "2026-07-13 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618158&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -306,7 +306,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619971&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -320,7 +320,7 @@
    "deadline": "2026-07-13 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619933&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -334,7 +334,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619618&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수련활동",
    "edu_org": true
   },
@@ -348,7 +348,7 @@
    "deadline": "2026-07-28 16:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619765&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -362,7 +362,7 @@
    "deadline": "2026-07-14 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01614979&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -376,7 +376,7 @@
    "deadline": "2026-07-28 18:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619086&bidPbancOrd=000",
    "type": "용역",
-   "tier": "normal",
+   "tier": "perform",
    "keyword": "진로교육",
    "edu_org": true
   },
@@ -390,7 +390,7 @@
    "deadline": "2026-07-29 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617653&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -404,7 +404,7 @@
    "deadline": "2026-07-15 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01619300&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -418,7 +418,7 @@
    "deadline": "2026-07-21 12:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618743&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "체험학습",
    "edu_org": true
   },
@@ -432,7 +432,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618602&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -446,7 +446,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618532&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -460,7 +460,7 @@
    "deadline": "2026-07-28 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618410&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -474,7 +474,7 @@
    "deadline": "2026-07-14 11:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618441&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "체험학습",
    "edu_org": true
   },
@@ -488,7 +488,7 @@
    "deadline": "2026-07-20 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01618268&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -502,7 +502,7 @@
    "deadline": "2026-07-10 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617857&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수련활동",
    "edu_org": true
   },
@@ -516,7 +516,7 @@
    "deadline": "2026-07-13 16:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01608374&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -530,7 +530,7 @@
    "deadline": "2026-07-14 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01610899&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -544,7 +544,7 @@
    "deadline": "2026-07-10 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617674&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -558,7 +558,7 @@
    "deadline": "2026-08-05 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617945&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -572,7 +572,7 @@
    "deadline": "2026-07-20 14:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617840&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -586,7 +586,7 @@
    "deadline": "2026-07-20 14:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01613996&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -600,7 +600,7 @@
    "deadline": "2026-07-27 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617731&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -614,7 +614,7 @@
    "deadline": "2026-07-15 17:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01616577&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -628,7 +628,7 @@
    "deadline": "2026-07-27 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01615417&bidPbancOrd=001",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -642,7 +642,7 @@
    "deadline": "2026-07-21 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617584&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -656,7 +656,7 @@
    "deadline": "2026-07-27 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01615417&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -670,7 +670,7 @@
    "deadline": "2026-07-10 14:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617109&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "현장체험학습",
    "edu_org": true
   },
@@ -684,7 +684,7 @@
    "deadline": "2026-07-15 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01616246&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -698,7 +698,7 @@
    "deadline": "2026-07-27 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01617065&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -712,7 +712,7 @@
    "deadline": "2026-07-20 10:30:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01612484&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -726,7 +726,7 @@
    "deadline": "2026-07-28 10:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01606242&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "수학여행",
    "edu_org": true
   },
@@ -740,7 +740,7 @@
    "deadline": "2026-07-20 16:00:00",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01615065&bidPbancOrd=000",
    "type": "용역",
-   "tier": "urgent",
+   "tier": "trip",
    "keyword": "체험학습",
    "edu_org": true
   }
