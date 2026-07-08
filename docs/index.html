@@ -11,10 +11,11 @@
 <style>
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   body { font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif; background:#f2f4f8; color:#1a1a1a; }
-  header { background:#1b4fa0; color:#fff; padding:16px 16px 12px; position:sticky; top:0; z-index:10; }
+  .topbar { position:sticky; top:0; z-index:10; }
+  header { background:#1b4fa0; color:#fff; padding:16px 16px 12px; }
   header h1 { font-size:18px; }
   header .sub { font-size:12px; opacity:.85; margin-top:3px; }
-  .tabs { display:flex; background:#fff; border-bottom:1px solid #e0e4ea; position:sticky; top:58px; z-index:9; }
+  .tabs { display:flex; background:#fff; border-bottom:1px solid #e0e4ea; }
   .tab { flex:1; text-align:center; padding:12px 0; font-size:14px; font-weight:600; color:#888; border-bottom:3px solid transparent; cursor:pointer; }
   .tab.on { color:#1b4fa0; border-color:#1b4fa0; }
   main { padding:12px; max-width:640px; margin:0 auto; }
@@ -37,6 +38,7 @@
 </style>
 </head>
 <body>
+<div class="topbar">
 <header>
   <h1>📢 아라 교육공고 알리미</h1>
   <div class="sub" id="updated">불러오는 중...</div>
@@ -45,6 +47,7 @@
   <div class="tab on" data-t="all">전체</div>
   <div class="tab" data-t="urgent">🔴 핵심</div>
   <div class="tab" data-t="cal">영업 캘린더</div>
+</div>
 </div>
 <main>
   <div id="list"></div>
