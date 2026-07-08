@@ -40,6 +40,15 @@ KEYWORDS_TRIP = [
     "현장체험학습", "수학여행", "수련활동", "체험학습",
     "교육활동", "체험활동",
 ]
+# 💰 지원금 소식: 교육부 보도자료 + 뉴스에서 이 키워드로 매일 검색
+GRANT_QUERIES = [
+    "현장체험학습비 지원", "수학여행비 지원", "체험학습비 지원",
+    "교육청 문화예술 지원", "학생 문화예술교육 지원",
+    "교육청 예방교육 지원", "교육청 추경 학생 지원",
+]
+MOE_RSS = "https://www.korea.kr/rss/dept_moe.xml"  # 교육부 정책브리핑
+GRANT_FILTER = ["지원", "예산", "확대", "신설", "추경", "무상"]
+
 # 발주기관(수요기관) 이름에 이 단어가 있으면 교육기관으로 판단
 EDU_ORG_WORDS = ["학교", "교육청", "교육지원청", "교육원", "교육연수원", "유치원", "교육심의"]
 
@@ -105,6 +114,63 @@ def is_excluded(name: str) -> bool:
     return any(w in name for w in EXCLUDE_WORDS)
 
 
+def fetch_rss(url: str):
+    """RSS 피드에서 (제목, 링크, 게시일시) 목록 추출"""
+    import xml.etree.ElementTree as ET
+    from email.utils import parsedate_to_datetime
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 edu-alert"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            root = ET.fromstring(r.read())
+    except Exception as e:
+        print(f"[RSS오류] {url[:60]}: {e}")
+        return []
+    out = []
+    for item in root.iter("item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        pub = (item.findtext("pubDate") or "").strip()
+        try:
+            dt = parsedate_to_datetime(pub).astimezone(KST).strftime("%Y-%m-%d %H:%M")
+        except Exception:
+            dt = datetime.now(KST).strftime("%Y-%m-%d %H:%M")
+        source = (item.findtext("source") or "").strip()
+        out.append((title, link, dt, source))
+    return out
+
+
+def collect_grants() -> dict:
+    """교육부 보도자료 + 구글뉴스에서 지원금 소식 수집"""
+    import hashlib
+    found = {}
+
+    def add(title, link, dt, source, kw):
+        if not title or not link:
+            return
+        gid = "grant-" + hashlib.md5(link.encode()).hexdigest()[:12]
+        found[gid] = {
+            "id": gid, "title": title, "org": source or "뉴스",
+            "region": "", "amount": "", "posted": dt, "deadline": "",
+            "url": link, "type": "소식", "tier": "grant",
+            "keyword": kw, "edu_org": True,
+        }
+
+    # 교육부 공식 보도자료 (지원 관련만)
+    for title, link, dt, source in fetch_rss(MOE_RSS):
+        if any(w in title for w in GRANT_FILTER):
+            add(title, link, dt, "교육부", "보도자료")
+
+    # 구글뉴스 키워드 검색 (교육청 발표가 기사화된 것 포착)
+    for q in GRANT_QUERIES:
+        rss = ("https://news.google.com/rss/search?q="
+               + urllib.parse.quote(q) + "+when:2d&hl=ko&gl=KR&ceid=KR:ko")
+        for title, link, dt, source in fetch_rss(rss):
+            add(title, link, dt, source, q)
+
+    print(f"지원금 소식: {len(found)}건 수집")
+    return found
+
+
 def main():
     if not API_KEY:
         print("오류: NARA_API_KEY 환경변수(시크릿)가 비어 있습니다.")
@@ -144,6 +210,10 @@ def main():
                     }
                     if prev is None or (prev["tier"] != "perform" and entry["tier"] == "perform"):
                         collected[no] = entry
+
+    # 지원금 소식 수집 합치기
+    for gid, entry in collect_grants().items():
+        collected.setdefault(gid, entry)
 
     # 기존 데이터와 병합 (최근 30일 유지)
     out_path = os.path.join(os.path.dirname(__file__), "..", "docs", "alerts.json")
