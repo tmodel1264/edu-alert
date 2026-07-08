@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>아라 교육공고 알리미</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1b4fa0">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif; background:#f2f4f8; color:#1a1a1a; }
+  header { background:#1b4fa0; color:#fff; padding:16px 16px 12px; position:sticky; top:0; z-index:10; }
+  header h1 { font-size:18px; }
+  header .sub { font-size:12px; opacity:.85; margin-top:3px; }
+  .tabs { display:flex; background:#fff; border-bottom:1px solid #e0e4ea; position:sticky; top:58px; z-index:9; }
+  .tab { flex:1; text-align:center; padding:12px 0; font-size:14px; font-weight:600; color:#888; border-bottom:3px solid transparent; cursor:pointer; }
+  .tab.on { color:#1b4fa0; border-color:#1b4fa0; }
+  main { padding:12px; max-width:640px; margin:0 auto; }
+  .card { background:#fff; border-radius:12px; padding:14px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .badge { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px; margin-right:6px; }
+  .b-urgent { background:#ffe3e3; color:#d0212a; }
+  .b-normal { background:#e6efff; color:#1b4fa0; }
+  .b-type { background:#eef1f5; color:#555; }
+  .title { font-size:15px; font-weight:700; margin:6px 0 4px; line-height:1.4; }
+  .meta { font-size:12.5px; color:#666; line-height:1.6; }
+  .meta b { color:#333; }
+  .link { display:inline-block; margin-top:8px; font-size:13px; color:#1b4fa0; font-weight:700; text-decoration:none; }
+  .empty { text-align:center; color:#999; padding:48px 0; font-size:14px; }
+  .season { background:#fff; border-radius:12px; padding:16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .season h3 { font-size:14px; color:#1b4fa0; margin-bottom:6px; }
+  .season p { font-size:13.5px; line-height:1.7; color:#444; }
+  .now { border:2px solid #1b4fa0; }
+  .now h3::after { content:" ← 지금"; color:#d0212a; }
+  footer { text-align:center; font-size:11px; color:#aaa; padding:20px 0 40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📢 아라 교육공고 알리미</h1>
+  <div class="sub" id="updated">불러오는 중...</div>
+</header>
+<div class="tabs">
+  <div class="tab on" data-t="all">전체</div>
+  <div class="tab" data-t="urgent">🔴 핵심</div>
+  <div class="tab" data-t="cal">영업 캘린더</div>
+</div>
+<main>
+  <div id="list"></div>
+  <div id="cal" style="display:none"></div>
+</main>
+<footer>아라컴퍼니 · 나라장터 공고 자동 수집 · 매일 오전 9시 갱신</footer>
+<script>
+const MONTH = new Date().getMonth() + 1;
+const SEASONS = [
+  { m:[12,1], t:"12월~1월 · 예산 확정 시즌", d:"각 교육청이 다음 해 본예산을 확정합니다. 지원금 확대·신설 발표가 몰리는 시기 → 신규 공고 키워드 감시 강화, 제안서 준비 시작." },
+  { m:[2,3], t:"2월~3월 · 공문·신청 시즌", d:"학교에 지원 공문이 내려가고 교육급여 집중 신청(3월 초~중순)이 진행됩니다. 학교가 연간 체험학습 계획을 짜는 시기 → 콜센터 1차 영업 피크." },
+  { m:[4,5], t:"4월~5월 · 1학기 집행 성수기", d:"봄 현장체험학습·수학여행 집행이 몰립니다. S2B 견적 노출 극대화, 단기 공고 즉시 대응." },
+  { m:[6,7,8], t:"6월~8월 · 준비기 + 추경 감시", d:"방학 전후로 2학기 계획이 세워지고, 추경(추가 예산)으로 지원금이 새로 생기기도 합니다 → 2학기 제안서 발송 시기." },
+  { m:[9,10,11], t:"9월~11월 · 2학기 집행 성수기", d:"가을 체험학습·축제·예방교육 수요가 몰립니다. 예방교육(학교폭력·도박·딥페이크) 공고 다수 → 콜센터 2차 영업 피크." },
+];
+function esc(s){ const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+function money(v){ if(!v) return ''; const n=parseInt(v,10); if(isNaN(n)) return esc(v);
+  if(n>=100000000) return (n/100000000).toFixed(1)+'억원'; if(n>=10000) return Math.round(n/10000).toLocaleString()+'만원'; return n.toLocaleString()+'원'; }
+let DATA = { items: [] };
+function render(tab){
+  const list=document.getElementById('list'), cal=document.getElementById('cal');
+  if(tab==='cal'){
+    list.style.display='none'; cal.style.display='block';
+    cal.innerHTML = SEASONS.map(s=>`<div class="season ${s.m.includes(MONTH)?'now':''}"><h3>${s.t}</h3><p>${s.d}</p></div>`).join('');
+    return;
+  }
+  cal.style.display='none'; list.style.display='block';
+  let items = DATA.items || [];
+  if(tab==='urgent') items = items.filter(i=>i.tier==='urgent');
+  if(!items.length){ list.innerHTML='<div class="empty">아직 수집된 공고가 없습니다.<br>매일 오전 9시에 자동으로 채워집니다.</div>'; return; }
+  list.innerHTML = items.map(i=>`
+    <div class="card">
+      <span class="badge ${i.tier==='urgent'?'b-urgent':'b-normal'}">${i.tier==='urgent'?'🔴 핵심':'🟡 일반'}</span>
+      <span class="badge b-type">${esc(i.type)}</span>
+      <span class="badge b-type">키워드: ${esc(i.keyword)}</span>
+      <div class="title">${esc(i.title)}</div>
+      <div class="meta">
+        <b>발주:</b> ${esc(i.org)}<br>
+        ${i.amount?`<b>예산:</b> ${money(i.amount)}<br>`:''}
+        <b>게시:</b> ${esc((i.posted||'').slice(0,16))} ${i.deadline?`· <b>마감:</b> ${esc(i.deadline.slice(0,16))}`:''}
+      </div>
+      ${i.url?`<a class="link" href="${esc(i.url)}" target="_blank">공고 원문 보기 →</a>`:''}
+    </div>`).join('');
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on'); render(t.dataset.t);
+});
+fetch('alerts.json?v='+Date.now()).then(r=>r.json()).then(d=>{
+  DATA=d;
+  document.getElementById('updated').textContent =
+    `마지막 갱신 ${d.updated||'-'} · 오늘 신규 ${d.new_today??0}건 · 전체 ${d.items.length}건`;
+  render('all');
+}).catch(()=>{ document.getElementById('updated').textContent='데이터 준비 중'; render('all'); });
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>
