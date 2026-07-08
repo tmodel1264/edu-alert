@@ -48,6 +48,9 @@ GRANT_QUERIES = [
 ]
 MOE_RSS = "https://www.korea.kr/rss/dept_moe.xml"  # 교육부 정책브리핑
 GRANT_FILTER = ["지원", "예산", "확대", "신설", "추경", "무상"]
+# 뉴스 제목에 아래 단어 중 하나는 반드시 있어야 지원금 소식으로 인정
+GRANT_MUST = ["지원", "예산", "억원", "만원", "확대", "신설", "무상", "추경", "지급"]
+GRANT_MAX = 40  # 지원금 소식 1회 수집 상한
 
 # 발주기관(수요기관) 이름에 이 단어가 있으면 교육기관으로 판단
 EDU_ORG_WORDS = ["학교", "교육청", "교육지원청", "교육원", "교육연수원", "유치원", "교육심의"]
@@ -144,9 +147,19 @@ def collect_grants() -> dict:
     import hashlib
     found = {}
 
+    seen_titles = set()
+
     def add(title, link, dt, source, kw):
         if not title or not link:
             return
+        # 제목에 돈 관련 단어가 없으면 제외 (교육감 동정 기사 등 차단)
+        if not any(w in title for w in GRANT_MUST):
+            return
+        # 언론사꼬리 제거 후 중복 기사 판별 ("제목 - 연합뉴스" → "제목")
+        core = title.rsplit(" - ", 1)[0].replace(" ", "")[:40]
+        if core in seen_titles or len(found) >= GRANT_MAX:
+            return
+        seen_titles.add(core)
         gid = "grant-" + hashlib.md5(link.encode()).hexdigest()[:12]
         found[gid] = {
             "id": gid, "title": title, "org": source or "뉴스",
